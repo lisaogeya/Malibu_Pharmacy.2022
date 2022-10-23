@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nav_home"
+    android:title="Home"
+    android:icon="@drawable/house"/>
+    <item android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/personoutline"/>
+    <item android:id="@+id/nav_prescription"
+        android:title="Prescription"
+        android:icon="@drawable/camera"/>
+    <item android:id="@+id/nav_chats"
+        android:title="Chats"
+        android:icon="@drawable/ic_round_chat_bubble_24"/>
+
+</menu>

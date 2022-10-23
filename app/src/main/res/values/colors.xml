@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue2">#00f1ff</color>
+    <color name="dark_blue">#00a8ff</color>
+    <color name="color1">#39dae7</color>
+    <color name="color2">#0f0585</color>
+    <color name="colorPrimary">#FF6200EE</color>
+    <color name="colorPrimaryDark">#2BCC6F</color>
+    <color name="colorPrimaryLight">#E9F8F1</color>
+    <color name="colorBackground">#EBEBEB</color>
+    <color name="colorTrendingStart">#00b09b</color>
+    <color name="colorTrendingEnd">#96C93D</color>
+    <color name="colorDivider">#D6D6D6</color>
+    <color name="background">#FFFFFFFF</color>
+    <color name="text_or_icon">#FF000000</color>
+    <color name="secondary_text">#696969</color>
+    <color name="dashboard_item_1">#FF6200EE</color>
+    <color name="dashboard_item_2">#FFBB86FC</color>
+    <color name="dashboard_item_3">#E64000</color>
+    <color name="dashboard_item_4">#F6B900</color>
+    <color name="start_op1">#580c4a</color>
+    <color name="mid_op1">#e68caf</color>
+    <color name="end_op1">#6a47c7</color>
+    <color name="start_op2">#fd475e</color>
+    <color name="mid_op2">#c4659f</color>
+    <color name="end_op2">#7d8afa</color>
+    <color name="start_op3">#4abdfb</color>
+    <color name="mid_op3">#ad5adc</color>
+    <color name="end_op3">#f1b5e7</color>
+    <color name="start_op4">#2a4dc1</color>
+    <color name="mid_op4">#569Be2</color>
+    <color name="end_op4">#935bca</color>
+    <color name="start_op5">#f47595</color>
+    <color name="mid_op5">#b15a9a</color>
+    <color name="end_op5">#643ba2</color>
+    <color name="start_op6">#560ea2</color>
+    <color name="mid_op6">#c78dc7</color>
+    <color name="end_op6">#f496a6</color>
+
+
+
+</resources>

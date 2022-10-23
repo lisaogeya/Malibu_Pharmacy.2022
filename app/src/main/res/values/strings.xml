@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Malibu Pharmacy</string>
+    <string name="signin">SIGN IN</string>
+    <string name="or_sign_in_with">Or SIgn In With</string>
+    <string name="hello">Hello</string>
+    <string name="user">User</string>
+    <string name="search">Search</string>
+    <string name="username">Username</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="log_in">LOG IN</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="details">Details</string>
+    <string name="user_details">User Details</string>
+    <string name="profilepage">PROFILE</string>
+    <string name="jane_doe">Jane Doe</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="person_details">Person Details</string>
+    <string name="persons_details">Personal Details</string>
+    <string name="insurance_details">Insurance Details</string>
+    <string name="insurance">Insurance</string>
+    <string name="delivery">DELIVERY</string>
+    <string name="delivery_details">Delivery Details</string>
+    <string name="notify">Notify</string>
+    <string name="notifications">Notifications</string>
+    <string name="login">LOG IN</string>
+    <string name="employee_id">Employee ID</string>
+    <string name="password">Password</string>
+    <string name="login_2">LOG IN</string>
+    <string name="or_use_fingerprint">OR USE FINGERPRINT</string>
+    <string name="pass_word">Password</string>
+    <string name="home_text">Home</string>
+    <string name="profile_text">Profile</string>
+    <string name="prescription">Prescription</string>
+    <string name="chats">Chats</string>
+    <string name="notification">NOTIFICATIONS</string>
+    <string name="homepage">HOMEPAGE</string>
+
+</resources>

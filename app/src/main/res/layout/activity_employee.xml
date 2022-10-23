@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:padding="@dimen/_12sdp"
+    tools:context=".EmployeeActivity">
+
+  <TextView
+      android:id="@+id/employeelogin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="50dp"
+      android:layout_marginTop="50dp"
+      android:layout_marginEnd="50dp"
+      android:layout_marginBottom="50dp"
+      android:fontFamily="serif"
+      android:gravity="center"
+      android:text="@string/login"
+      android:textColor="@color/black"
+      android:textSize="35sp"
+      android:textStyle="italic" />
+
+  <EditText
+  android:id="@+id/employeeid"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_below="@+id/employeelogin"
+  android:layout_marginStart="30dp"
+  android:layout_marginTop="30dp"
+  android:layout_marginEnd="30dp"
+  android:layout_marginBottom="30dp"
+  android:background="#30FFFFFF"
+  android:drawableStart="@drawable/ic_baseline_person_pin_24"
+  android:drawablePadding="20dp"
+  android:hint="@string/employee_id"
+  android:padding="20dp"
+      android:textColorHint="@color/black"
+      android:textColor="@color/black"
+  android:inputType="text"/>
+
+  <EditText
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/password"
+      android:layout_below="@+id/employeeid"
+      android:background="#30FFFFFF"
+      android:hint="@string/password"
+      android:textColorHint="@color/black"
+      android:textColor="@color/black"
+      android:layout_margin="30dp"
+      android:padding="20dp"
+      android:drawableStart="@drawable/ic_baseline_lock_24"
+      android:drawablePadding="20dp"
+      android:inputType="textPassword"/>
+
+  <com.google.android.material.button.MaterialButton
+      android:id="@+id/loginemployeebtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/password"
+      android:text="@string/login_2"
+      android:layout_marginTop="10dp"
+      android:layout_marginBottom="20dp"
+      android:padding="10dp"
+      android:layout_centerHorizontal="true"
+      android:textColor="@color/white"
+      android:textSize="20sp"
+      android:backgroundTint="@color/black"
+      android:drawablePadding="10dp"/>
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:id="@+id/otherletter"
+      android:text="@string/or_use_fingerprint"
+      android:layout_below="@+id/loginemployeebtn"
+      android:layout_centerHorizontal="true"
+      android:layout_margin="30dp"
+      android:textColor="@color/black"
+      android:padding="20dp"/>
+
+  <Button
+      android:id="@+id/verifybtn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/otherletter"
+      android:layout_centerHorizontal="true"
+      android:background="@drawable/fingerprint_dialog_fp_icon"
+      android:padding="20dp"
+      android:layout_margin="20dp"/>
+
+
+
+
+  </RelativeLayout>
