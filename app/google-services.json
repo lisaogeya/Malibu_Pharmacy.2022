@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "929754665281",
+    "project_id": "malibu-pharmacy-aa466",
+    "storage_bucket": "malibu-pharmacy-aa466.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929754665281:android:09799a9fd3c073834f51c0",
+        "android_client_info": {
+          "package_name": "com.example.malibupharmacy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929754665281-k3o2b21cko07n4u016hs6k8q2bd9vvun.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.malibupharmacy",
+            "certificate_hash": "33546a46e6c2667def63b98fa2434a61fa39e9a4"
+          }
+        },
+        {
+          "client_id": "929754665281-oak7mh3cm4e9k96m16g3j4eq8niae7rj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmhkFJDrJNpJKkOBoXsLcEVeIjCnKkLh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929754665281-oak7mh3cm4e9k96m16g3j4eq8niae7rj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -35,5 +35,12 @@
     <string name="chats">Chats</string>
     <string name="notification">NOTIFICATIONS</string>
     <string name="homepage">HOMEPAGE</string>
+    <string name="faq">FAQ</string>
+    <string name="locate_us">LOCATE US</string>
+    <string name="branches">BRANCHES</string>
+    <string name="find_us">FIND US</string>
+    <string name="f_a_q">F A Q</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="our_team">OUR TEAM</string>
 
 </resources>
