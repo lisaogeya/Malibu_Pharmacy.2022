@@ -4,6 +4,386 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/_12sdp"
+    android:background="@color/white"
+    android:backgroundTint="@color/white"
     tools:context=".InsuranceDetailsActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_or_icon"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:src="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_or_icon" />
+
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="@string/insurance_details_"
+        android:textColor="@color/text_or_icon"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBack"
+        app:layout_constraintEnd_toStartOf="@+id/imageSearch"
+        app:layout_constraintStart_toEndOf="@+id/imageBack"
+        app:layout_constraintTop_toTopOf="@+id/imageBack"/>
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imageProfile"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:src="@drawable/profileinsurance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textTitle"
+        app:riv_oval="true"/>
+    <TextView
+        android:id="@+id/textinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:text="@string/hello_kindly_fill_in_your_insurance_details_"
+        android:textColor="@color/text_or_icon"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageProfile"/>
+
+
+    <LinearLayout
+        android:id="@+id/layoutDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textinfo">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout5"
+            android:layout_width="202dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Principal Name"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText5"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_grey"
+                android:minHeight="@dimen/_12sdp"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout6"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Policy No"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText6"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_grey" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layoutDetails2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDetails">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout3"
+            android:layout_width="176dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Member No"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText3"
+                android:layout_width="158dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_grey"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout4"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Employer"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText4"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:background="@color/light_grey"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutDetails3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDetails2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Dependant"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="171dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textILayout2"
+            android:layout_width="181dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:background="@color/white"
+            android:drawablePadding="20dp"
+            android:hint="Insurance "
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="italic"
+            app:hintTextColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutDetails2"
+            app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText2"
+                android:layout_width="169dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_grey"
+                android:textColor="@color/black"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutDetails3">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/black"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:text="SAVE"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDetails3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/editBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="0dp"
+            android:backgroundTint="@color/black"
+            android:drawablePadding="10dp"
+            android:padding="10dp"
+            android:text="EDIT"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.045"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layoutDetails3" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/scanPrint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="SCAN FINGERPRINT"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutBtn" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageProf"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/personicon82"
+        android:contentDescription="@string/_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:riv_oval="true" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagechats"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:background="@drawable/chaticon3"
+        android:contentDescription="@string/_messages"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageProf"
+        app:riv_oval="true" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageHome"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@drawable/homeicon52"
+        android:contentDescription="@string/_home"
+        app:layout_constraintBottom_toBottomOf="@+id/imageProf"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

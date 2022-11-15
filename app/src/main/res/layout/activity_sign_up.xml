@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="@dimen/_12sdp"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        tools:layout_editor_absoluteX="165dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textFNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="First Name"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="text"
+        app:startIconDrawable="@drawable/ic_baseline_person_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        android:autofillHints="Full Name">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textFNameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textPersonName"
+            android:background="@color/light_grey"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/LNameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="Last Name"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/textFNameLayout"
+        app:startIconDrawable="@drawable/ic_baseline_person_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFNameLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textLNameEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textPersonName"
+            android:background="@color/light_grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contactLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="Phone Number"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/LNameLayout"
+        app:startIconDrawable="@drawable/ic_baseline_phone_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LNameLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contactEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textPersonName"
+            android:background="@color/light_grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="Email Address"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="textEmailAddress"
+        android:layout_below="@+id/contactLayout"
+        app:startIconDrawable="@drawable/ic_baseline_email_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:background="@color/light_grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="Password"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/emailLayout"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:background="@color/light_grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/repasswordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="0dp"
+        android:background="#30FFFFFF"
+        android:drawablePadding="20dp"
+        android:hint="Confirm Password"
+        android:textColorHint="@color/black"
+        android:textStyle="italic"
+        android:padding="20dp"
+        android:inputType="textPassword"
+        android:layout_below="@+id/passwordLayout"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contactLayout">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/re_passwordEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"
+            android:background="@color/light_grey" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.077"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_below="@+id/repasswordLayout">
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/registerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="REGISTER"
+            android:layout_marginEnd="80dp"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/loginBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:text="SIGN IN"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

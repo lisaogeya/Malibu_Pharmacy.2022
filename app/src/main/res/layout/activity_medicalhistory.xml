@@ -4,13 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/_12sdp"
     android:background="@color/white"
-    tools:context=".ProfileActivity">
-
-
-
-
+    android:padding="@dimen/_12sdp"
+    tools:context=".MedicalHistoryActivity">
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageBack"
         android:layout_width="@dimen/_20sdp"
@@ -30,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_or_icon" />
 
+
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="0dp"
@@ -37,7 +34,7 @@
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:gravity="center"
-        android:text="@string/profilepage"
+        android:text="@string/medical_history_"
         android:textColor="@color/text_or_icon"
         android:textSize="@dimen/_14ssp"
         android:textStyle="italic"
@@ -50,41 +47,39 @@
         android:id="@+id/imageProfile"
         android:layout_width="@dimen/_100sdp"
         android:layout_height="@dimen/_100sdp"
-        android:src="@drawable/profileperson"
+        android:src="@drawable/medichistory2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textTitle"
         app:riv_oval="true"/>
     <TextView
-        android:id="@+id/textUsername"
+        android:id="@+id/textinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_12sdp"
-        android:text="Welcome"
+        android:text="@string/hello_kindly_fill_in_your_medical_details_below"
         android:textColor="@color/text_or_icon"
-        android:textSize="@dimen/_18ssp"
-        android:textStyle="bold"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageProfile"/>
-
-
     <androidx.constraintlayout.helper.widget.Flow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/iconsbackground"
+        android:background="@drawable/background5"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_5sdp"
-        app:constraint_referenced_ids="cardDelivery,cardInsurance,cardMedHistory,cardOCR"
+        app:constraint_referenced_ids="cardAllergies,cardConditions,cardTestsDone,cardMoreInfo"
         app:flow_horizontalGap="@dimen/_8sdp"
         app:flow_maxElementsWrap="2"
         app:flow_verticalGap="@dimen/_8sdp"
         app:flow_wrapMode="aligned"
         app:layout_constraintBottom_toTopOf="@id/imageProf"
-        app:layout_constraintTop_toBottomOf="@+id/textUsername"/>
+        app:layout_constraintTop_toBottomOf="@+id/textinfo"/>
     <androidx.cardview.widget.CardView
         android:clickable="true"
-        android:id="@+id/cardDelivery"
+        android:id="@+id/cardAllergies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
@@ -93,61 +88,24 @@
         android:focusable="true">
 
         <LinearLayout
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/_16sdp">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/delivery"
-                android:layout_width="@dimen/_35sdp"
-                android:layout_height="@dimen/_35sdp"
-                android:src="@drawable/profiledeliver3"
-                android:contentDescription="@string/persons_details"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/person_details"
-                android:textColor="@color/text_or_icon"
-                android:textSize="@dimen/_30ssp"
-                android:textStyle="italic"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardInsurance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="@dimen/_16sdp"
-        app:cardUseCompatPadding="true">
-
-        <LinearLayout
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:orientation="vertical"
-            android:padding="@dimen/_16sdp">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/insurance"
+                android:id="@+id/Allergies"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/profileinsurance"
-                android:contentDescription="@string/insurance_details"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/insurance"
+                android:text="Allergies"
                 android:textColor="@color/text_or_icon"
-                android:textSize="@dimen/_30ssp"
+                android:textSize="@dimen/_20ssp"
                 android:textStyle="italic"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardMedHistory"
+        android:id="@+id/cardConditions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
@@ -155,30 +113,25 @@
         app:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/_16sdp">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/medHistory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/medicalhistory22"
-                android:contentDescription="@string/delivery_details"/>
 
             <TextView
+                android:id="@+id/conditions"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/medical_history"
+                android:text="Underlying Conditions"
                 android:textColor="@color/text_or_icon"
-                android:textSize="@dimen/_30ssp"
+                android:textSize="@dimen/_20ssp"
                 android:textStyle="italic"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardOCR"
+        android:id="@+id/cardTestsDone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/white"
@@ -186,24 +139,45 @@
         app:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="@dimen/_60sdp"
-            android:layout_height="@dimen/_60sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/_16sdp">
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/ocr"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ocricon107"
-                android:contentDescription="@string/notify"/>
 
             <TextView
+                android:id="@+id/tests"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Prescription Scan"
+                android:text="Tests Done"
                 android:textColor="@color/text_or_icon"
-                android:textSize="@dimen/_30ssp"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="italic"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMoreInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp">
+
+
+            <TextView
+                android:id="@+id/moreInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Any other Info"
+                android:textColor="@color/text_or_icon"
+                android:textSize="@dimen/_20ssp"
                 android:textStyle="italic"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -239,18 +213,6 @@
         android:contentDescription="@string/_home"
         app:layout_constraintBottom_toBottomOf="@+id/imageProf"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

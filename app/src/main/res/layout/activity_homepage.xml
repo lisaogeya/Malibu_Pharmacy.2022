@@ -55,12 +55,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
+
+
     <androidx.constraintlayout.helper.widget.Flow
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_5sdp"
-        app:constraint_referenced_ids="faq,branches,info"
+        app:constraint_referenced_ids="info,faq,branches"
         app:flow_horizontalGap="@dimen/_8sdp"
         app:flow_maxElementsWrap="2"
         app:flow_verticalGap="@dimen/_8sdp"
@@ -69,7 +71,29 @@
         app:layout_constraintTop_toBottomOf="@id/roundImage"/>
 
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardUseCompatPadding="true">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MEET THE TEAM"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="italic"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
     <androidx.cardview.widget.CardView
         android:id="@+id/faq"
         android:layout_width="wrap_content"
@@ -78,20 +102,20 @@
         app:cardCornerRadius="@dimen/_16sdp"
         app:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="@dimen/_16sdp">
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/f_a_q"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_20ssp"
-            android:textStyle="italic"/>
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="@dimen/_16sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/how_to_navigate"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="italic"/>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -111,43 +135,23 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/find_us"
+                android:text="@string/locate_us_"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_20ssp"
                 android:textStyle="italic"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="@color/black"
-        app:cardCornerRadius="@dimen/_16sdp"
-        app:cardUseCompatPadding="true">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/_16sdp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/our_team"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_20ssp"
-                android:textStyle="italic"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/imageOCR"
-        android:layout_width="@dimen/_55sdp"
-        android:layout_height="@dimen/_55sdp"
+        android:id="@+id/imagechats"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginBottom="@dimen/_2sdp"
-        android:background="@drawable/ocricon3"
+        android:background="@drawable/chaticon3"
+        android:contentDescription="@string/_messages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <androidx.appcompat.widget.AppCompatImageButton
@@ -156,6 +160,7 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_7sdp"
         android:background="@drawable/homeicon52"
+        android:contentDescription="@string/_home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     <androidx.appcompat.widget.AppCompatImageButton
@@ -164,8 +169,9 @@
         android:layout_height="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_1sdp"
         android:background="@drawable/personicon82"
+        android:contentDescription="@string/_profile"
         app:layout_constraintBottom_toBottomOf="@id/imageHome"
-        app:layout_constraintEnd_toStartOf="@id/imageOCR"
+        app:layout_constraintEnd_toStartOf="@id/imagechats"
         app:layout_constraintStart_toEndOf="@id/imageHome"
         />
 

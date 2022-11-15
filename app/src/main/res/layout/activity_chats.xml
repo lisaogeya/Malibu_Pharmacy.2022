@@ -52,11 +52,11 @@
         app:layout_constraintTop_toBottomOf="@id/textTitle" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/imageOCR"
-        android:layout_width="@dimen/_55sdp"
-        android:layout_height="@dimen/_55sdp"
+        android:id="@+id/imagechats"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
         android:layout_marginBottom="@dimen/_2sdp"
-        android:background="@drawable/ocricon3"
+        android:background="@drawable/chaticon3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <androidx.appcompat.widget.AppCompatImageButton
@@ -74,9 +74,8 @@
         android:layout_marginBottom="@dimen/_1sdp"
         android:background="@drawable/personicon82"
         app:layout_constraintBottom_toBottomOf="@id/imageHome"
-        app:layout_constraintEnd_toStartOf="@id/imageOCR"
-        app:layout_constraintStart_toEndOf="@id/imageHome"
-        />
+        app:layout_constraintEnd_toStartOf="@id/imagechats"
+        app:layout_constraintStart_toEndOf="@id/imageHome" />
 
 
 

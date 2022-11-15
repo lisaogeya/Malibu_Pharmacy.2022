@@ -12,15 +12,15 @@ import android.widget.ImageView;
 public class HomepageActivity extends AppCompatActivity {
 private AppCompatImageButton imageProf;
 private AppCompatImageButton imageHome;
-private AppCompatImageButton imageOCR;
+private AppCompatImageButton imagechats;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
-     AppCompatImageButton imageProf = (AppCompatImageButton) findViewById(R.id.imageProf);
-     AppCompatImageButton imageHome = (AppCompatImageButton) findViewById(R.id.imageHome);
-     AppCompatImageButton imageOCR = (AppCompatImageButton)  findViewById(R.id.imageOCR);
+      imageProf = findViewById(R.id.imageProf);
+     imageHome = findViewById(R.id.imageHome);
+     imagechats = findViewById(R.id.imagechats);
 
      imageProf.setOnClickListener(new View.OnClickListener() {
          @Override
@@ -37,10 +37,10 @@ private AppCompatImageButton imageOCR;
 
          }
      });
-     imageOCR.setOnClickListener(new View.OnClickListener() {
+     imagechats.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-             Intent intent = new Intent(HomepageActivity.this, OCRActivity.class);
+             Intent intent = new Intent(HomepageActivity.this, ChatsActivity.class);
              startActivity(intent);
          }
      });

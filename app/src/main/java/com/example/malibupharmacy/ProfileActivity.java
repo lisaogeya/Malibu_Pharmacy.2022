@@ -3,7 +3,6 @@ package com.example.malibupharmacy;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,7 +12,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private AppCompatImageButton imageProf;
     private AppCompatImageButton imageHome;
-    private AppCompatImageButton imageOCR;
+    private AppCompatImageButton imagechats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +20,11 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         AppCompatImageButton imageProf = (AppCompatImageButton) findViewById(R.id.imageProf);
         AppCompatImageButton imageHome = (AppCompatImageButton) findViewById(R.id.imageHome);
-        AppCompatImageButton imageOCR = (AppCompatImageButton)  findViewById(R.id.imageOCR);
-        AppCompatImageView   chats= (AppCompatImageView) findViewById(R.id.chats);
-        AppCompatImageView   delivery=(AppCompatImageView) findViewById(R.id.delivery);
+        AppCompatImageButton imagechats = (AppCompatImageButton)  findViewById(R.id.imagechats);
+        AppCompatImageView   ocr= (AppCompatImageView) findViewById(R.id.ocr);
+        AppCompatImageView   medHistory=(AppCompatImageView) findViewById(R.id.medHistory);
         AppCompatImageView   insurance=(AppCompatImageView) findViewById(R.id.insurance);
-        AppCompatImageView   person=(AppCompatImageView) findViewById(R.id.person);
+        AppCompatImageView   delivery=(AppCompatImageView) findViewById(R.id.delivery);
         imageProf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,24 +40,24 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
-        imageOCR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, OCRActivity.class);
-                startActivity(intent);
-            }
-        });
-        chats.setOnClickListener(new View.OnClickListener() {
+        imagechats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ProfileActivity.this, ChatsActivity.class);
                 startActivity(intent);
             }
         });
-        delivery.setOnClickListener(new View.OnClickListener() {
+        ocr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, DeliveryActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, OCRActivity.class);
+                startActivity(intent);
+            }
+        });
+        medHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, MedicalHistoryActivity.class);
                 startActivity(intent);
             }
         });
@@ -69,10 +68,10 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        person.setOnClickListener(new View.OnClickListener() {
+        delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ProfileActivity.this, ProfileDetailsActivity.class);
+                Intent intent = new Intent(ProfileActivity.this, DeliveryDetailsActivity.class);
                 startActivity(intent);
             }
         });

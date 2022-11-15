@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/_12sdp"
+    android:background="@color/white"
+    tools:context=".TestsActivity">
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageBack"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:src="@drawable/back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_or_icon"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageSearch"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:src="@drawable/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/text_or_icon" />
+
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="TESTS"
+        android:textColor="@color/text_or_icon"
+        android:textSize="@dimen/_14ssp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/imageBack"
+        app:layout_constraintEnd_toStartOf="@+id/imageSearch"
+        app:layout_constraintStart_toEndOf="@+id/imageBack"
+        app:layout_constraintTop_toTopOf="@+id/imageBack"/>
+
+
+    <TextView
+        android:id="@+id/textinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Hello Kindly fill in any medical tests done on you."
+        android:textColor="@color/text_or_icon"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imagechats"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        android:background="@drawable/chaticon3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageHome"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:background="@drawable/homeicon52"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/imageProf"
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
+        android:background="@drawable/personicon82"
+        app:layout_constraintBottom_toBottomOf="@id/imageHome"
+        app:layout_constraintEnd_toStartOf="@id/imagechats"
+        app:layout_constraintStart_toEndOf="@id/imageHome" />
+    <TextView
+        android:id="@+id/testName"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:text="Tests Done:"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textinfo"
+        tools:layout_editor_absoluteX="-24dp" />
+
+    <EditText
+        android:id="@+id/testNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/testName"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/testDateEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/testDate"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <TextView
+        android:id="@+id/testDate"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Date:"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/testLocationEt"
+        tools:layout_editor_absoluteX="33dp" />
+
+    <TextView
+        android:id="@+id/testLocation"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Where:"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/testNameEt"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <EditText
+        android:id="@+id/testLocationEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@+id/testLocation"
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="15dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveTest"
+        android:layout_width="83dp"
+        android:layout_height="53dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="@color/black"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/testDateEt" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
-    android:padding="@dimen/_12sdp"
+    android:padding="12dp"
     tools:context=".EmployeeActivity">
 
   <TextView
@@ -25,22 +25,22 @@
       android:textStyle="italic" />
 
   <EditText
-  android:id="@+id/employeeid"
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:layout_below="@+id/employeelogin"
-  android:layout_marginStart="30dp"
-  android:layout_marginTop="30dp"
-  android:layout_marginEnd="30dp"
-  android:layout_marginBottom="30dp"
-  android:background="#30FFFFFF"
-  android:drawableStart="@drawable/ic_baseline_person_pin_24"
-  android:drawablePadding="20dp"
-  android:hint="@string/employee_id"
-  android:padding="20dp"
-      android:textColorHint="@color/black"
+      android:id="@+id/employeeid"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/employeelogin"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginBottom="30dp"
+      android:background="#30FFFFFF"
+      android:drawableStart="@drawable/ic_baseline_person_pin_24"
+      android:drawablePadding="20dp"
+      android:hint="@string/employee_id"
+      android:inputType="text"
+      android:padding="20dp"
       android:textColor="@color/black"
-  android:inputType="text"/>
+      android:textColorHint="@color/black" />
 
   <EditText
       android:layout_width="match_parent"
@@ -62,26 +62,29 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_below="@id/password"
-      android:text="@string/login_2"
+      android:layout_centerHorizontal="true"
       android:layout_marginTop="10dp"
       android:layout_marginBottom="20dp"
-      android:padding="10dp"
-      android:layout_centerHorizontal="true"
-      android:textColor="@color/white"
-      android:textSize="20sp"
       android:backgroundTint="@color/black"
-      android:drawablePadding="10dp"/>
+      android:drawablePadding="10dp"
+      android:padding="10dp"
+      android:text="@string/login_2"
+      android:textColor="@color/white"
+      android:textSize="20sp" />
 
   <TextView
+      android:id="@+id/otherletter"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:id="@+id/otherletter"
-      android:text="@string/or_use_fingerprint"
       android:layout_below="@+id/loginemployeebtn"
       android:layout_centerHorizontal="true"
-      android:layout_margin="30dp"
-      android:textColor="@color/black"
-      android:padding="20dp"/>
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginBottom="30dp"
+      android:padding="20dp"
+      android:text="@string/or_use_fingerprint"
+      android:textColor="@color/black" />
 
   <Button
       android:id="@+id/verifybtn"

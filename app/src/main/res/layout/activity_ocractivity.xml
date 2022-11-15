@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:padding="@dimen/_12sdp"
+    android:background="@color/white"
     tools:context=".OCRActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/inputImageBtn"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:layout_marginEnd="3dp"
+           android:text="CAPTURE"
+           app:icon="@drawable/ic_baseline_add_a_photo_24"
+           app:cornerRadius="5dp"
+           android:layout_weight="1"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/scanprescriptionBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cornerRadius="5dp"
+            app:icon="@drawable/ic_baseline_qr_code_scanner_24"
+            android:layout_marginStart="3dp"
+            android:layout_weight="1"
+            android:text="SCAN PRESCRIPTION" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ocrLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageIv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_image_24"
+                android:adjustViewBounds="true"
+                app:strokeWidth="2dp"/>
+            <TextView
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:id="@+id/ScanText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Scanned Prescription:"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/scannedTextEt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="48dp"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/scanSaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:drawablePadding="10dp"
+        android:padding="10dp"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ocrLayout" />
 
 
 
-</RelativeLayout>
+</LinearLayout>
