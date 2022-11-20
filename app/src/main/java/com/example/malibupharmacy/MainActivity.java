@@ -1,19 +1,21 @@
 package com.example.malibupharmacy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-private MaterialButton customerbtn;
-private MaterialButton employeebtn;
-private MaterialButton adminbtn;
+    private MaterialButton customerbtn;
+    private MaterialButton employeebtn;
+    private MaterialButton adminbtn;
+
+    private FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -24,6 +26,8 @@ private MaterialButton adminbtn;
         MaterialButton customerbtn = (MaterialButton) findViewById(R.id.cutsomerbtn);
         MaterialButton employeebtn = (MaterialButton) findViewById(R.id.employeebtn);
         MaterialButton adminbtn = (MaterialButton) findViewById(R.id.adminbtn);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         customerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +55,14 @@ private MaterialButton adminbtn;
         });
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
-
-
+        if(currentUser != null ){
+            Intent intent = new Intent(MainActivity.this, HomepageActivity.class);
+            startActivity(intent);
+        }
     }
+}

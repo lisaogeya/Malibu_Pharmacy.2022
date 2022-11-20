@@ -5,14 +5,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import android.database.Cursor;
+
 import com.google.android.material.button.MaterialButton;
 
 public class AllergiesActivity extends AppCompatActivity {
     EditText allergyEt;
-    MaterialButton saveABtn,viewABtn;
+    MaterialButton saveABtn, viewABtn;
     DBHelper DB;
 
     @Override
@@ -37,14 +38,15 @@ public class AllergiesActivity extends AppCompatActivity {
 
                 if (description.equals(""))
                     Toast.makeText(AllergiesActivity.this, "Allergy has not been entered", Toast.LENGTH_SHORT).show();
-                    else{
-                    Boolean saveAllergy = DB.saveAllergies(id, description);
-                    if (saveAllergy==true)
+                else {
+                    Boolean saveAllergy = DB.saveAllergies(description);
+                    if (saveAllergy) {
                         Toast.makeText(AllergiesActivity.this, "Allergy Saved", Toast.LENGTH_SHORT).show();
+                        allergyEt.setText("");
+                    }
                     else
                         Toast.makeText(AllergiesActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
-
 
 
             }
@@ -53,25 +55,20 @@ public class AllergiesActivity extends AppCompatActivity {
         viewABtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Cursor res = DB.getAdata();
-                if (res.getCount()==0){
-                    Toast.makeText(AllergiesActivity.this, "No Entry Exists", Toast.LENGTH_SHORT).show();
+                String allergies = DB.getAllergies();
+
+                if (allergies.isEmpty()) {
+                    Toast.makeText(AllergiesActivity.this, "No allergies recorded yet", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                StringBuffer buffer = new StringBuffer();
-                while (res.moveToNext()){
-                    buffer.append("Allergy:"+res.getString(0)+"\n");
-                }
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(AllergiesActivity.this);
                 builder.setCancelable(true);
                 builder.setTitle("User Entries");
-                builder.setMessage(buffer.toString());
+                builder.setMessage(allergies);
                 builder.show();
-
-                    
             }
         });
-
 
 
     }

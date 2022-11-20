@@ -102,12 +102,12 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText5"
+                android:id="@+id/edt_principal_name"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
                 android:background="@color/light_grey"
-                android:minHeight="@dimen/_12sdp"/>
+                android:minHeight="@dimen/_12sdp"
+                android:textColor="@color/black" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +133,7 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText6"
+                android:id="@+id/edt_policy_no"
                 android:layout_width="158dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -174,7 +174,7 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText3"
+                android:id="@+id/edt_member_no"
                 android:layout_width="158dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -204,7 +204,7 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText4"
+                android:id="@+id/edt_employer"
                 android:layout_width="171dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/black"
@@ -248,7 +248,7 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText"
+                android:id="@+id/edt_dependant"
                 android:layout_width="171dp"
                 android:layout_height="wrap_content"
                 android:background="@color/light_grey"
@@ -278,7 +278,7 @@
             app:startIconDrawable="@drawable/ic_baseline_drive_file_rename_outline_24">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/textInputEditText2"
+                android:id="@+id/edt_insurance"
                 android:layout_width="169dp"
                 android:layout_height="wrap_content"
                 android:background="@color/light_grey"

@@ -1,19 +1,17 @@
 package com.example.malibupharmacy;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -21,12 +19,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 
 public class InsuranceDetailsActivity extends AppCompatActivity {
-    TextView textTitle;
-    EditText textInputEditText5,textInputEditText,textInputEditText3,textInputEditText6,textInputEditText4,textInputEditText2;
-    MaterialButton saveBtn;
+    private TextView textTitle;
+    private EditText edtPrincipalName, edtPolicyNo, edtMemberNo, edtEmployer, edtDependant, edtInsurance;
+    private MaterialButton saveBtn;
+    private MaterialButton editButton;
+    private DBHelper dbHelper;
 
 
     @Override
@@ -34,19 +34,21 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insurance_details);
 
+        dbHelper = new DBHelper(this);
+
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
         }
 
         MaterialButton scanPrint = (MaterialButton) findViewById(R.id.scanPrint);
-        textTitle = (TextView) findViewById(R.id.textTitle);
-        textInputEditText5 = (EditText) findViewById(R.id.textInputEditText5);
-        textInputEditText = (EditText) findViewById(R.id.textInputEditText);
-        textInputEditText3 = (EditText) findViewById(R.id.textInputEditText3);
-        textInputEditText6 = (EditText) findViewById(R.id.textInputEditText6);
-        textInputEditText4 = (EditText) findViewById(R.id.textInputEditText4);
-        textInputEditText2 = (EditText) findViewById(R.id.textInputEditText2);
+        edtPrincipalName = (EditText) findViewById(R.id.edt_principal_name);
+        edtPolicyNo = (EditText) findViewById(R.id.edt_policy_no);
+        edtMemberNo = (EditText) findViewById(R.id.edt_member_no);
+        edtEmployer = (EditText) findViewById(R.id.edt_employer);
+        edtDependant = (EditText) findViewById(R.id.edt_dependant);
+        edtInsurance = (EditText) findViewById(R.id.edt_insurance);
         saveBtn = (MaterialButton) findViewById(R.id.saveBtn);
+        editButton = (MaterialButton) findViewById(R.id.editBtn);
 
 
         scanPrint.setOnClickListener(new View.OnClickListener() {
@@ -58,21 +60,47 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
 
             }
         });
-        saveBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String filename = textTitle.getText().toString();
-                String content = textInputEditText5.getText().toString();
+        saveBtn.setOnClickListener(v -> {
 
-                if (!filename.equals("") && !content.equals("")) {
-                    saveTextAsFile(filename, content);
-                }
+            if (edtPrincipalName.getText().toString().equals("") || edtPolicyNo.getText().toString().equals("") || edtMemberNo.getText().toString().equals("") || edtEmployer.getText().toString().equals("") || edtDependant.getText().toString().equals("") || edtInsurance.getText().toString().equals("")) {
 
-
+                Toast.makeText(InsuranceDetailsActivity.this, "Please fill all fields", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            boolean saved = dbHelper.saveInsuranceDetails(edtPrincipalName.getText().toString(), edtPolicyNo.getText().toString(), edtMemberNo.getText().toString(), edtEmployer.getText().toString(), edtDependant.getText().toString(), edtInsurance.getText().toString());
+            if (saved) {
+                Toast.makeText(InsuranceDetailsActivity.this, "Insurance details saved", Toast.LENGTH_SHORT).show();
+                InsuranceDetailsActivity.this.onBackPressed();
+            } else {
+                Toast.makeText(InsuranceDetailsActivity.this, "Failed saving insurance details", Toast.LENGTH_SHORT).show();
+            }
+
+            // you can update this with the new info  above
+            //todo  saveTextAsFile("Insurance Details", content);
+        });
+
+        editButton.setOnClickListener(v -> {
+            HashMap<String, String> insuranceData = dbHelper.getInsuranceInfo();
+
+
+            if (insuranceData.isEmpty()) {
+                Toast.makeText(InsuranceDetailsActivity.this, "No insurance data to edit ", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            edtPrincipalName.setText((CharSequence) insuranceData.get("principal_name"));
+            edtPolicyNo.setText((CharSequence) insuranceData.get("policy_no"));
+            edtMemberNo.setText((CharSequence) insuranceData.get("member_no"));
+            edtEmployer.setText((CharSequence) insuranceData.get("employer_no"));
+            edtDependant.setText((CharSequence) insuranceData.get("dependant"));
+            edtInsurance.setText((CharSequence) insuranceData.get("insurance"));
         });
     }
-    private void saveTextAsFile(String filename, String content){
+
+
+    //you can update this function to save the rest of the details
+    private void saveTextAsFile(String filename, String content) {
         String fileName = filename + ".txt";
 
         File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), fileName);
@@ -86,11 +114,10 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             Toast.makeText(this, "File not found", Toast.LENGTH_SHORT).show();
-        } catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
         }
-
 
 
     }
