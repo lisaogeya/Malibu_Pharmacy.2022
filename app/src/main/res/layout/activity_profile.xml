@@ -21,11 +21,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_or_icon"/>
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageSearch"
+        android:id="@+id/img_share"
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_4sdp"
-        android:src="@drawable/search"
+        android:src="@drawable/ic_baseline_share_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/text_or_icon" />
@@ -42,7 +42,7 @@
         android:textSize="@dimen/_14ssp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="@+id/imageBack"
-        app:layout_constraintEnd_toStartOf="@+id/imageSearch"
+        app:layout_constraintEnd_toStartOf="@+id/img_share"
         app:layout_constraintStart_toEndOf="@+id/imageBack"
         app:layout_constraintTop_toTopOf="@+id/imageBack"/>
 
@@ -70,18 +70,18 @@
 
 
     <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/iconsbackground"
-        android:layout_marginStart="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_5sdp"
         app:constraint_referenced_ids="cardDelivery,cardInsurance,cardMedHistory,cardOCR"
         app:flow_horizontalGap="@dimen/_8sdp"
         app:flow_maxElementsWrap="2"
         app:flow_verticalGap="@dimen/_8sdp"
         app:flow_wrapMode="aligned"
         app:layout_constraintBottom_toTopOf="@id/imageProf"
-        app:layout_constraintTop_toBottomOf="@+id/textUsername"/>
+        app:layout_constraintTop_toBottomOf="@+id/textUsername"
+        tools:layout_editor_absoluteX="22dp" />
     <androidx.cardview.widget.CardView
         android:clickable="true"
         android:id="@+id/cardDelivery"
@@ -240,19 +240,18 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageProf"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:textAllCaps="false"
+        app:cornerRadius="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageProf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

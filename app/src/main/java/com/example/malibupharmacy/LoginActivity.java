@@ -1,21 +1,28 @@
 package com.example.malibupharmacy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
 
-TextView HeadToSignUp;
-EditText username, password;
-DBHelper DB;
+    private final String TAG = "LOGIN_ACTIVITY";
+    TextView HeadToSignUp;
+    EditText username, password;
+    DBHelper DB;
+    private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,23 +35,26 @@ DBHelper DB;
         password = (EditText) findViewById(R.id.password1);
         DB = new DBHelper(this);
 
+        firebaseAuth = FirebaseAuth.getInstance();
+
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneno = username.getText().toString();
+                String email = username.getText().toString();
                 String pass = password.getText().toString();
-                
-                if (phoneno.equals("")||pass.equals(""))
+
+                if (email.equals("") || pass.equals(""))
                     Toast.makeText(LoginActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
                 else {
-                    Boolean checkuserpass = DB.confirmusercredentials(phoneno,pass);
-                    if (checkuserpass==true){
-                        Toast.makeText(LoginActivity.this, "Sign in successful.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
-                        startActivity(intent);
-                    }else {
-                        Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-                    }
+                    //  Boolean checkuserpass = DB.confirmusercredentials(phoneno, pass);
+//                    if (checkuserpass == true) {
+//                        Toast.makeText(LoginActivity.this, "Sign in successful.", Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
+//                        startActivity(intent);
+//                    } else {
+//                        Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
+//                    }
+                    loginWithFirebase(email, pass);
                 }
             }
         });
@@ -56,5 +66,25 @@ DBHelper DB;
             }
         });
 
+    }
+
+    private void loginWithFirebase(String email, String password) {
+        firebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(LoginActivity.this, task -> {
+                    if(task.isSuccessful()){
+                        Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
+                        startActivity(intent);
+                    }else {
+
+                        Log.i(TAG, "loginWithFirebase: " + task.getException());
+
+                        if(task.getException() instanceof IOException){
+                            Toast.makeText(LoginActivity.this, "Please connect to the internet", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        Toast.makeText(LoginActivity.this, "Confirm email and password are correct.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

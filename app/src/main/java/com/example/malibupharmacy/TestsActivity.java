@@ -1,11 +1,11 @@
 package com.example.malibupharmacy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -36,12 +36,12 @@ public class TestsActivity extends AppCompatActivity {
 
                 if (testDate.equals("") || testLocation.equals("") || testTitle.equals(""))
                     Toast.makeText(TestsActivity.this, "Kindly Fill All Fields.", Toast.LENGTH_SHORT).show();
-                else{
+                else {
                     Boolean saveAllergy = DB.saveTest(testTitle, testDate, testLocation);
-                    if (saveAllergy==true)
+                    if (saveAllergy) {
                         Toast.makeText(TestsActivity.this, "Test Saved", Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(TestsActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                        TestsActivity.this.onBackPressed();
+                    } else Toast.makeText(TestsActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
             }
         });
