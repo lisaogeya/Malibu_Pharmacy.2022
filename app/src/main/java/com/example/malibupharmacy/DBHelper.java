@@ -64,6 +64,12 @@ public class DBHelper extends SQLiteOpenHelper {
         MyDB.execSQL("drop Table if exists test");
         MyDB.execSQL("drop Table if exists prescriptions");
         MyDB.execSQL("drop Table if exists delivery");
+        MyDB.execSQL("drop Table if exists insurance_details");
+        MyDB.execSQL("drop Table if exists underlying_conditions");
+        MyDB.execSQL("drop Table if exists additional_information");
+        MyDB.execSQL("drop Table if exists ocr_information");
+
+        onCreate(MyDB);
     }
 
     public Boolean saveUser(Integer id, String fname, String lname, String email, String phoneno, String pass) {
