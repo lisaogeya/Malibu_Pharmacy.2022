@@ -19,12 +19,12 @@ import java.util.Map;
 
 public class ChatsActivity extends AppCompatActivity {
     private final String TAG = "CHATS_ACTIVITY";
-    private AppCompatImageButton imageHome;
-    private AppCompatImageButton imageProf;
-    private AppCompatImageButton imagechats;
     RecyclerView recyclerView;
     ArrayList<User> userArrayList;
     NotificationsAdapter notificationsAdapter;
+    private AppCompatImageButton imageHome;
+    private AppCompatImageButton imageProf;
+    private AppCompatImageButton imagechats;
     private FirebaseFirestore firestore;
 
     @Override
@@ -68,8 +68,9 @@ public class ChatsActivity extends AppCompatActivity {
 
 
         //todo extract user info from firestore add populate recycler view
-        firestore.collection("users").document("pharmattendant@gmail.com").get().addOnCompleteListener(task -> {
+        firestore.collection("users").document("test3@gmail.com").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
+
 
                 DocumentSnapshot document = task.getResult();
 
@@ -80,14 +81,34 @@ public class ChatsActivity extends AppCompatActivity {
                         Map data = document.getData();
 
                         //todo sort the data  into a list of entries and inject into recycler view adapter
-                        ArrayList<HashMap<String, String>> notifications = (ArrayList<HashMap<String, String>>) data.get("notifications");
+                        ArrayList<HashMap> notificationsHashMap = (ArrayList<HashMap>) data.get("notifications");
 
-                        notificationsAdapter = new NotificationsAdapter(ChatsActivity.this,userArrayList);
+
+                        for (HashMap notification : notificationsHashMap) {
+
+                            Log.i(TAG, "onCreate: " + notification);
+                            String additionalInfo = (String) notification.get("AdditionalInfo");
+                            String allergies = (String) notification.get("Allergies");
+                            String underlyingConditions = (String) notification.get("UnderlyingConditions");
+                            String userInfo = (String) notification.get("InsuranceInfo");
+                            String insuranceInfo = (String) notification.get("InsuranceInfo");
+                            String deliveryInfo = (String) notification.get("DeliveryInfo");
+                            String tests = (String) notification.get("Tests");
+                            User model = new User(additionalInfo, allergies, deliveryInfo, insuranceInfo, tests, underlyingConditions, userInfo);
+
+                            Log.i(TAG, "onCreateNotificationModel: " + model);
+
+                            userArrayList.add(model);
+                        }
+
+                        notificationsAdapter = new NotificationsAdapter(ChatsActivity.this, userArrayList);
+                        recyclerView.setAdapter(notificationsAdapter);
 
                         //check log for data structure
                         Log.i(TAG, "onCreate: " + document.getData());
                     } catch (Exception e) {
                         Log.i(TAG, "onCreate: " + e.getMessage());
+                        e.printStackTrace();
                     }
                 } else {
                     System.out.println("Document does not exist");

@@ -262,16 +262,16 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    public HashMap<String , String> getDeliveryInfo() {
+    public HashMap<String, String> getDeliveryInfo() {
         SQLiteDatabase MyDB = this.getWritableDatabase();
         Cursor cursor = MyDB.rawQuery("Select * from delivery", null);
         HashMap<String, String> deliveryInfo = new HashMap<>();
         try {
             if (cursor.moveToFirst()) {
                 do {
-                    deliveryInfo.put("location" , cursor.getString(cursor.getColumnIndex("location")));
-                    deliveryInfo.put("street" , cursor.getString(cursor.getColumnIndex("street")));
-                    deliveryInfo.put("additional_info" , cursor.getString(cursor.getColumnIndex("additional_info")));
+                    deliveryInfo.put("location", cursor.getString(cursor.getColumnIndex("location")));
+                    deliveryInfo.put("street", cursor.getString(cursor.getColumnIndex("street")));
+                    deliveryInfo.put("additional_info", cursor.getString(cursor.getColumnIndex("additional_info")));
                 } while (cursor.moveToNext());
             }
 
@@ -356,13 +356,13 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM underlying_conditions", null);
 
-        ArrayList <String> underlyingConditions = new ArrayList<>();
+        ArrayList<String> underlyingConditions = new ArrayList<>();
 
         try {
             if (cursor.moveToFirst()) {
-               do{
-                   underlyingConditions.add(cursor.getString(cursor.getColumnIndex("description")));
-               }while (cursor.moveToNext());
+                do {
+                    underlyingConditions.add(cursor.getString(cursor.getColumnIndex("description")));
+                } while (cursor.moveToNext());
             }
 
         } catch (Exception e) {
@@ -397,13 +397,13 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM additional_information", null);
 
-        ArrayList <String> additionalInformation = new ArrayList<>();
+        ArrayList<String> additionalInformation = new ArrayList<>();
 
         try {
             if (cursor.moveToFirst()) {
-                do{
+                do {
                     additionalInformation.add(cursor.getString(cursor.getColumnIndex("description")));
-                }while (cursor.moveToNext());
+                } while (cursor.moveToNext());
             }
 
         } catch (Exception e) {
@@ -438,13 +438,13 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM ocr_information", null);
 
-        ArrayList <String> ocrInformation = new ArrayList<>();
+        ArrayList<String> ocrInformation = new ArrayList<>();
 
         try {
             if (cursor.moveToFirst()) {
-                do{
+                do {
                     ocrInformation.add(cursor.getString(cursor.getColumnIndex("description")));
-                }while (cursor.moveToNext());
+                } while (cursor.moveToNext());
             }
 
         } catch (Exception e) {
