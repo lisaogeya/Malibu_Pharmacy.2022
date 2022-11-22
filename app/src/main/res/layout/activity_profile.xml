@@ -138,11 +138,11 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="6dp"
                 android:text="@string/insurance"
                 android:textColor="@color/text_or_icon"
                 android:textSize="@dimen/_30ssp"
-                android:textStyle="italic"/>
+                android:textStyle="italic" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

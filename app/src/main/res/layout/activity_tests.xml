@@ -158,8 +158,8 @@
         tools:layout_editor_absoluteX="15dp" />
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveTest"
-        android:layout_width="83dp"
-        android:layout_height="53dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="150dp"
         android:layout_marginTop="48dp"

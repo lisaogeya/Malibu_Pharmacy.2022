@@ -27,7 +27,7 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
     private MaterialButton saveBtn;
     private MaterialButton editButton;
     private DBHelper dbHelper;
-
+    private TextView textInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,6 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_insurance_details);
 
         dbHelper = new DBHelper(this);
-
         if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1000);
         }
@@ -49,7 +48,7 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
         edtInsurance = (EditText) findViewById(R.id.edt_insurance);
         saveBtn = (MaterialButton) findViewById(R.id.saveBtn);
         editButton = (MaterialButton) findViewById(R.id.editBtn);
-
+        textInfo = (TextView) findViewById(R.id.textinfo);
 
         scanPrint.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,7 +97,15 @@ public class InsuranceDetailsActivity extends AppCompatActivity {
         });
     }
 
-
+    public void checkPolicyDetails(View v){
+        EditText edtPolicyNo = (EditText) findViewById(R.id.edt_policy_no);
+        EditText edtInsurance = (EditText) findViewById(R.id.edt_insurance);
+        String policyNo = edtPolicyNo.getText().toString();
+        String insurance= edtInsurance.getText().toString();
+        String type = "checkinsurance";
+        BackgroundHelper backgroundHelper= new BackgroundHelper(this);
+        backgroundHelper.execute(type, insurance, policyNo);
+    }
     //you can update this function to save the rest of the details
     private void saveTextAsFile(String filename, String content) {
         String fileName = filename + ".txt";

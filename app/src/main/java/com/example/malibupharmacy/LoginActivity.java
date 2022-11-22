@@ -46,14 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (email.equals("") || pass.equals(""))
                     Toast.makeText(LoginActivity.this, "Fill all fields", Toast.LENGTH_SHORT).show();
                 else {
-                    //  Boolean checkuserpass = DB.confirmusercredentials(phoneno, pass);
-//                    if (checkuserpass == true) {
-//                        Toast.makeText(LoginActivity.this, "Sign in successful.", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);
-//                        startActivity(intent);
-//                    } else {
-//                        Toast.makeText(LoginActivity.this, "Invalid credentials", Toast.LENGTH_SHORT).show();
-//                    }
+
                     loginWithFirebase(email, pass);
                 }
             }
@@ -69,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginWithFirebase(String email, String password) {
-        firebaseAuth.signInWithEmailAndPassword(email, password)
+        firebaseAuth.signInWithEmailAndPassword(email.trim(), password)
                 .addOnCompleteListener(LoginActivity.this, task -> {
                     if(task.isSuccessful()){
                         Intent intent = new Intent(LoginActivity.this, HomepageActivity.class);

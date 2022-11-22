@@ -7,6 +7,8 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -20,6 +22,9 @@ public class ChatsActivity extends AppCompatActivity {
     private AppCompatImageButton imageHome;
     private AppCompatImageButton imageProf;
     private AppCompatImageButton imagechats;
+    RecyclerView recyclerView;
+    ArrayList<User> userArrayList;
+    NotificationsAdapter notificationsAdapter;
     private FirebaseFirestore firestore;
 
     @Override
@@ -31,7 +36,13 @@ public class ChatsActivity extends AppCompatActivity {
         AppCompatImageButton imageProf = findViewById(R.id.imageProf);
         AppCompatImageButton imagechats = findViewById(R.id.imagechats);
 
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         firestore = FirebaseFirestore.getInstance();
+        userArrayList = new ArrayList<User>();
+
 
         imageHome.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +68,7 @@ public class ChatsActivity extends AppCompatActivity {
 
 
         //todo extract user info from firestore add populate recycler view
-        firestore.collection("users").document("test3@gmail.com").get().addOnCompleteListener(task -> {
+        firestore.collection("users").document("pharmattendant@gmail.com").get().addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
 
                 DocumentSnapshot document = task.getResult();
@@ -70,6 +81,8 @@ public class ChatsActivity extends AppCompatActivity {
 
                         //todo sort the data  into a list of entries and inject into recycler view adapter
                         ArrayList<HashMap<String, String>> notifications = (ArrayList<HashMap<String, String>>) data.get("notifications");
+
+                        notificationsAdapter = new NotificationsAdapter(ChatsActivity.this,userArrayList);
 
                         //check log for data structure
                         Log.i(TAG, "onCreate: " + document.getData());

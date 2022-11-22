@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
+    id 'org.jetbrains.kotlin.android'
 }
 
 android {
@@ -56,6 +57,28 @@ dependencies {
 
     //firebase firestore
     implementation 'com.google.firebase:firebase-firestore'
+
+    //stk push libs
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    implementation 'com.jakewharton.timber:timber:4.7.1'
+
+    implementation 'com.github.jumadeveloper:networkmanager:0.0.2'
+
+    implementation 'cn.pedant.sweetalert:library:1.3'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.0'
+
+    implementation 'com.google.code.gson:gson:2.9.0'
+
+    implementation 'com.squareup.okio:okio:2.1.0'
+
+    implementation 'javax.annotation:javax.annotation-api:1.3.2'
+
 
 
 

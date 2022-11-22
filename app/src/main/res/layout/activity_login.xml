@@ -78,14 +78,14 @@
         android:id="@+id/HeadToSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/loginbtn"
         android:layout_above="@+id/socialicons"
+        android:layout_below="@+id/loginbtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
         android:text="New Here? SIGN UP"
         android:textColor="@color/black"
         android:textSize="@dimen/_12sdp"
-        android:textStyle="bold"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"/>
+        android:textStyle="bold" />
 
 
     <LinearLayout

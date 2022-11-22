@@ -72,5 +72,6 @@
     <string name="medical_history">Medical History</string>
     <string name="medical_history_">MEDICAL HISTORY</string>
     <string name="hello_kindly_fill_in_your_medical_details_below">Hello! Kindly fill in your medical details below</string>
+    <string name="pay">PAY</string>
 
 </resources>

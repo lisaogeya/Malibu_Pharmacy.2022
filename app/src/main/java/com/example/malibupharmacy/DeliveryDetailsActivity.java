@@ -1,6 +1,8 @@
 package com.example.malibupharmacy;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
         TextInputEditText street = (TextInputEditText) findViewById(R.id.textStreetEt);
         TextInputEditText additionalInfo = (TextInputEditText) findViewById(R.id.textDeliveryEt);
         Button saveButton = (Button) findViewById(R.id.btn_save);
+        Button payButton = (Button) findViewById(R.id.btn_pay) ;
 
         saveButton.setOnClickListener(v -> {
             if (location.getText().toString().equals("") || street.getText().toString().equals("") || additionalInfo.getText().toString().equals("")) {
@@ -37,5 +40,12 @@ public class DeliveryDetailsActivity extends AppCompatActivity {
                 Toast.makeText(DeliveryDetailsActivity.this, "Delivery details could not be saved", Toast.LENGTH_SHORT).show();
             }
         });
+        /*payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DeliveryDetailsActivity.this, PayActivity.class);
+                startActivity(intent);
+            }
+        });*/
     }
 }
